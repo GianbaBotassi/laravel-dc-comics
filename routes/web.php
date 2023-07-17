@@ -15,6 +15,15 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\MainController as MainController;
 
+// Rotta per la home
 Route::get('/', [MainController::class, 'index'])->name('home');
 
+// Rotta per la pagina col form create
+Route::get('/create', [MainController::class, 'create'])->name('create');
+
+
+Route::post('/store', [MainController::class, 'store'])->name('store');
+
+
+// Rotta per la show che mostra informazioni della singola card cliccata
 Route::get('/show/{id}', [MainController::class, 'show'])->name('show');
