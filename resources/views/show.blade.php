@@ -24,4 +24,8 @@
             </div>
         </div>
     </section>
+    <div class="text-center">
+        <a href="{{ route('home') }}">
+            Indietro </a>
+    </div>
 @endsection
