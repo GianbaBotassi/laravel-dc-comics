@@ -1,24 +1,12 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+@extends('layout.main-layout')
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+@section('content')
+    <ul>
 
-    <title>Laravel</title>
-
-    <!-- Fonts -->
-    <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-
-    <!-- Styles -->
-    @vite('resources/js/app.js')
-
-</head>
-
-<body>
-
-    <h1>{{ $comics[0]->title }}</h1>
-
-</body>
-
-</html>
+        @foreach ($comics as $comic)
+            <a class="text-decoration-none text-dark" href="#">
+                <li class="list-unstyled">{{ $comic->title }}</li>
+            </a>
+        @endforeach
+    </ul>
+@endsection
