@@ -17,7 +17,7 @@
 
 <body>
 
-    <h1>hello jello</h1>
+    <h1>{{ $comics[0]->title }}</h1>
 
 </body>
 
