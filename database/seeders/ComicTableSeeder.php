@@ -232,6 +232,7 @@ class ComicTableSeeder extends Seeder
 
         foreach ($data as $comicData) {
 
+            // Ciclo per creare ogni elemento del database inserito in $data
             Comic::create([
 
                 "title" => $comicData['title'],

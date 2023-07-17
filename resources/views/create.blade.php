@@ -1,6 +1,7 @@
 @extends('layout.main-layout')
 
 @section('content')
+    {{-- Form per inserimento dati fumetto, metodo POST con action diretta allo store --}}
     <form class="container text-light my-2" method="POST" action="{{ route('store') }}">
         @csrf
         <div class="d-flex flex-column">

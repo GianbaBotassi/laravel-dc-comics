@@ -13,6 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
+
+        // Creo modello di tabella con dati accettati
         Schema::create('comics', function (Blueprint $table) {
             $table->id();
 

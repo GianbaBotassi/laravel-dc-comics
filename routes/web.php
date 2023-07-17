@@ -21,7 +21,7 @@ Route::get('/', [MainController::class, 'index'])->name('home');
 // Rotta per la pagina col form create
 Route::get('/create', [MainController::class, 'create'])->name('create');
 
-
+// Rotta per l'invio dei dati
 Route::post('/store', [MainController::class, 'store'])->name('store');
 
 

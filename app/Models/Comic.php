@@ -9,6 +9,7 @@ class Comic extends Model
 {
     use HasFactory;
 
+    // Aggiunto fillable per permettere inserimento dati in massa (Mass Assignment)
     protected $fillable = [
         "title",
         "description",
