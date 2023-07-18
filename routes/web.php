@@ -31,4 +31,7 @@ Route::get('/show/{id}', [MainController::class, 'show'])->name('show');
 Route::get('/edit/{id}', [MainController::class, 'edit'])->name('edit');
 
 // Rotta per update
-Route::post('/update/{id}', [MainController::class, 'update'])->name('update');
+Route::put('/update/{id}', [MainController::class, 'update'])->name('update');
+
+// Rotta per eliminare elemento
+Route::post('/destroy/{id}', [MainController::class, 'destroy'])->name('destroy');
