@@ -58,13 +58,11 @@ class MainController extends Controller
     }
 
     // edit
-    public function edit(Request $request, $id)
+    public function edit($id)
     {
-
-        $data = $request->all();
 
         $comics = Comic::findOrFail($id);
 
-        $comics->update($data);
+        return view('edit', compact('comics'));
     }
 }

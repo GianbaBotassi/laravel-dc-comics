@@ -28,4 +28,4 @@ Route::post('/store', [MainController::class, 'store'])->name('store');
 Route::get('/show/{id}', [MainController::class, 'show'])->name('show');
 
 // Rotta per editare
-Route::get('/edit', [MainController::class, 'edit'])->name('edit');
+Route::get('/edit/{id}', [MainController::class, 'edit'])->name('edit');
