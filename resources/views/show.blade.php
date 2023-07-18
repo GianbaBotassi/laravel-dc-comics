@@ -1,30 +1,39 @@
 @extends('layout.main-layout')
 
 @section('content')
-    <section class="wrapper d-flex justify-content-center">
-        <div class="container row justify-content-center">
-            <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
-                <div class="card text-light card-has-bg click-col" style="background-image:url('{{ $comics->thumb }}');">
-                    <img class="card-img d-none" src="https://source.unsplash.com/600x900/?tech,street" alt="">
-                    <div class="card-img-overlay d-flex flex-column">
-                        <div class="card-body">
-                            <h4 class="card-title mt-0">{{ $comics->title }}</h4>
-                            <small><i class="far fa-clock"></i>{{ date('Y-m-d', strtotime($comics->sale_date)) }}</small>
-                        </div>
-                        <div class="card-footer">
-                            <div class="media">
-                                <div class="media-body">
-                                    <h6 class="my-0 text-light d-block">{{ $comics->series }}</h6>
-                                    <small>{{ $comics->price }}</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <div class="container text-center">
+        <h2>{{ $comics->title }}</h2>
+        <img src="{{ $comics->thumb }}" alt="{{ $comics->title }}" style="width: 300px">
+        <div class="d-flex justify-content-between mt-4">
+            <span class="rounded bg-secondary px-2 py-1">{{ $comics->series }}</span>
+            <span class="rounded bg-secondary px-2 py-1">{{ $comics->price }}</span>
+            <span class="rounded bg-secondary px-2 py-1">{{ date('Y-m-d', strtotime($comics->sale_date)) }}</span>
+            <span class="rounded bg-secondary px-2 py-1">{{ $comics->type }}</span>
+        </div>
+        <p class="py-2">{{ $comics->description }}</p>
+        <div class="d-flex justify-content-around">
+            <div>
+                <h4 class="bg-secondary rounded py-1 px-2">Artists</h4>
+                <ul>
+                    @foreach (json_decode($comics->artists) as $artist)
+                        <li>{{ $artist }}</li>
+                    @endforeach
+                </ul>
+            </div>
+            <div>
+                <h4 class="bg-secondary rounded py-1 px-2">Writers</h4>
+                <ul>
+                    @foreach (json_decode($comics->writers) as $writer)
+                        <li>{{ $writer }}</li>
+                    @endforeach
+                </ul>
             </div>
         </div>
+    </div>
+
+    </div>
     </section>
-    <div class="text-center pb-2">
+    <div class="text-center mb-4">
         <a class="btn btn-primary" href="{{ route('home') }}">
             Indietro </a>
     </div>

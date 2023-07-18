@@ -36,7 +36,10 @@
             </div>
 
         </div>
+        <div class="d-flex justify-content-center align-items-center my-3">
+            <button type="submit" class="btn btn-primary me-3">Aggiungi</button>
+            <a class="btn btn-primary" href="{{ route('home') }}">Indietro</a>
+        </div>
 
-        <button type="submit" class="btn btn-primary my-2">Aggiungi</button>
     </form>
 @endsection
