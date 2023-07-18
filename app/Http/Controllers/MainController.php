@@ -56,4 +56,15 @@ class MainController extends Controller
 
         return view('show', compact('comics'));
     }
+
+    // edit
+    public function edit(Request $request, $id)
+    {
+
+        $data = $request->all();
+
+        $comics = Comic::findOrFail($id);
+
+        $comics->update($data);
+    }
 }

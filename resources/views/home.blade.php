@@ -4,11 +4,15 @@
     <ul class="py-2">
         {{-- Ciclo fumetti attualmente nel database --}}
         @foreach ($comics as $comic)
-            <div class="home">
-                <a class="text-decoration-none text-dark" href="{{ route('show', $comic->id) }}">
-                    <li class="list-unstyled">{{ $comic->title }}</li>
+            <li class="d-flex justify-content-center">
+                <a class="text-decoration-none text-white" href="{{ route('show', $comic->id) }}">
+                    {{ $comic->title }}
                 </a>
-            </div>
+                <span>
+                    <a class="btn btn-warning py-1 px-1 mx-3 text-decoration-none text-dark" style="font-size: 0.7rem"
+                        href="{{ route('edit', $comic->id) }}">Edit</a>
+                </span>
+            </li>
         @endforeach
     </ul>
 

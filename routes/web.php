@@ -24,6 +24,8 @@ Route::get('/create', [MainController::class, 'create'])->name('create');
 // Rotta per l'invio dei dati
 Route::post('/store', [MainController::class, 'store'])->name('store');
 
-
 // Rotta per la show che mostra informazioni della singola card cliccata
 Route::get('/show/{id}', [MainController::class, 'show'])->name('show');
+
+// Rotta per editare
+Route::get('/edit', [MainController::class, 'edit'])->name('edit');
