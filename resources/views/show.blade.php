@@ -1,7 +1,7 @@
 @extends('layout.main-layout')
 
 @section('content')
-    <section class="wrapper">
+    <section class="wrapper d-flex justify-content-center">
         <div class="container row justify-content-center">
             <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
                 <div class="card text-light card-has-bg click-col" style="background-image:url('{{ $comics->thumb }}');">
@@ -24,8 +24,8 @@
             </div>
         </div>
     </section>
-    <div class="text-center">
-        <a href="{{ route('home') }}">
+    <div class="text-center pb-2">
+        <a class="btn btn-primary" href="{{ route('home') }}">
             Indietro </a>
     </div>
 @endsection

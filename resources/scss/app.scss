@@ -15,19 +15,19 @@ h1 {
     color: #fff;
 }
 
-.lead {
-    color: #aaa;
-}
-
-.wrapper {
-    margin-top: 10vh
-}
-
 .home a li {
     color: white !important;
 }
 
 //post card styles
+
+.lead {
+    color: #aaa;
+}
+
+.wrapper {
+    margin-top: 5vh
+}
 
 .card {
     border: none;
@@ -114,5 +114,3 @@ h1 {
         background: linear-gradient(0deg, rgba(253, 253, 253, 0.1) 0%, rgb(93, 91, 88) 100%);
     }
 }
-
-@media (max-width: 767px) {}

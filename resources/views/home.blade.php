@@ -1,7 +1,7 @@
 @extends('layout.main-layout')
 
 @section('content')
-    <ul>
+    <ul class="py-2">
         {{-- Ciclo fumetti attualmente nel database --}}
         @foreach ($comics as $comic)
             <div class="home">
@@ -13,5 +13,5 @@
     </ul>
 
     {{-- Rotta per andare al form --}}
-    <h6><a href="{{ route('create') }}">Aggiungi fumetto</a></h6>
+    <h6><a class="btn btn-primary mb-2" href="{{ route('create') }}">Aggiungi fumetto</a></h6>
 @endsection
