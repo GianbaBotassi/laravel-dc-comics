@@ -22,6 +22,7 @@
         @endforeach
     </ul>
 
+
     {{-- Rotta per andare al form --}}
     <h6><a class="btn btn-primary mb-2" href="{{ route('create') }}">Aggiungi fumetto</a></h6>
 @endsection
