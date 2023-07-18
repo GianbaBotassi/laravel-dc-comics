@@ -2,8 +2,9 @@
 
 @section('content')
     {{-- Form per inserimento dati fumetto, metodo POST con action diretta allo store --}}
-    <form class="container text-light my-2" method="POST">
+    <form class="container text-light my-2" method="POST" action="{{ route('update', $comics->id) }}">
         @csrf
+        {{-- @method('PUT') --}}
         <div class="d-flex flex-column">
             <div class="my-1 d-flex flex-column align-items-center">
                 <label for="title">Title</label>

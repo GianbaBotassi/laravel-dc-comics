@@ -27,5 +27,8 @@ Route::post('/store', [MainController::class, 'store'])->name('store');
 // Rotta per la show che mostra informazioni della singola card cliccata
 Route::get('/show/{id}', [MainController::class, 'show'])->name('show');
 
-// Rotta per editare
+// Rotta per pagina edit dove è possibile modificare dati
 Route::get('/edit/{id}', [MainController::class, 'edit'])->name('edit');
+
+// Rotta per update
+Route::post('/update/{id}', [MainController::class, 'update'])->name('update');

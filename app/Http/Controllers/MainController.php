@@ -57,12 +57,25 @@ class MainController extends Controller
         return view('show', compact('comics'));
     }
 
-    // edit
+    // Funzione che mostra l'id scelto e consente di modificare
     public function edit($id)
     {
 
         $comics = Comic::findOrFail($id);
 
         return view('edit', compact('comics'));
+    }
+
+    // Funzione per update, prendo i dati inseriti e li modifico nel db
+    public function update(Request $request, $id)
+    {
+
+        $data = $request->all();
+
+        $comic = Comic::findOrFail($id);
+
+        $comic->update($data);
+
+        return redirect()->route('show', $comic->id);
     }
 }
