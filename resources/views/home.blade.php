@@ -12,6 +12,12 @@
                     <a class="btn btn-warning py-1 px-1 mx-3 text-decoration-none text-dark" style="font-size: 0.7rem"
                         href="{{ route('edit', $comic->id) }}">Edit</a>
                 </span>
+                <form method="POST" action="{{ route('destroy', $comic->id) }}">
+                    @csrf
+                    @method('DELETE')
+                    <button class="btn btn-danger py-1 px-1 text-decoration-none text-white"
+                        style="font-size: 0.7rem">Elimina</button>
+                </form>
             </li>
         @endforeach
     </ul>

@@ -78,4 +78,15 @@ class MainController extends Controller
 
         return redirect()->route('show', $comic->id);
     }
+
+    // Funzione per eliminare elemento
+    public function destroy($id)
+    {
+
+        $comic = Comic::findOrFail($id);
+
+        $comic->delete();
+
+        return redirect()->route('home');
+    }
 }
