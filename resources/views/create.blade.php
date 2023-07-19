@@ -7,32 +7,40 @@
         <div class="d-flex flex-column">
             <div class="my-1 d-flex flex-column align-items-center">
                 <label for="title">Title</label>
-                <input type="text" name="title" id="title" style="width: 300px">
+                <input type="text" name="title" id="title">
             </div>
             <div class="my-1 d-flex flex-column align-items-center">
                 <label for="price">Price</label>
-                <input type="text" name="price" id="price" style="width: 300px">
+                <input type="text" name="price" id="price">
             </div>
             <div class="my-1 d-flex flex-column align-items-center">
                 <label for="series">Series</label>
-                <input type="text" name="series" id="series" style="width: 300px">
+                <input type="text" name="series" id="series">
             </div>
             <div class="my-1 d-flex flex-column align-items-center">
                 <label for="sale_date">Data uscita</label>
-                <input type="date" name="sale_date" id="sale_date" style="width: 300px">
+                <input type="date" name="sale_date" id="sale_date">
             </div>
             <div class="my-1 d-flex flex-column align-items-center">
                 <label for="type">Tipologia</label>
-                <input type="text" name="type" id="type" style="width: 300px">
+                <input type="text" name="type" id="type">
             </div>
             <div class="my-1 d-flex flex-column align-items-center">
                 <label for="description">Descrizione</label>
-                <textarea type="text" name="description" id="description" style="width: 300px">
+                <textarea type="text" name="description" id="description">
                 </textarea>
             </div>
             <div class="my-1 d-flex flex-column align-items-center">
                 <label for="thumb">Immagine</label>
-                <input type="text" name="thumb" id="thumb" style="width: 300px">
+                <input type="text" name="thumb" id="thumb">
+            </div>
+            <div class="my-1 d-flex flex-column align-items-center">
+                <label for="artists">Artisti</label>
+                <input type="text" name="artists" id="artists">
+            </div>
+            <div class="my-1 d-flex flex-column align-items-center">
+                <label for="writers">Scrittori</label>
+                <input type="text" name="writers" id="writers">
             </div>
 
         </div>

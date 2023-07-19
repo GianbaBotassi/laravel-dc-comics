@@ -34,6 +34,14 @@
                 <label for="thumb">Immagine</label>
                 <input type="text" name="thumb" id="thumb" value="{{ $comics->thumb }}">
             </div>
+            <div class="my-1 d-flex flex-column align-items-center">
+                <label for="artists">Artisti</label>
+                <input type="text" name="artists" id="artists" value="{{ $comics->artists }}">
+            </div>
+            <div class="my-1 d-flex flex-column align-items-center">
+                <label for="writers">Scrittori</label>
+                <input type="text" name="writers" id="writers" value="{{ $comics->writers }}">
+            </div>
 
         </div>
         <div class="d-flex justify-content-center align-items-center my-3">

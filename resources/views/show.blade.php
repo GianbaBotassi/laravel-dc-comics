@@ -13,20 +13,17 @@
         <p class="py-2">{{ $comics->description }}</p>
         <div class="d-flex justify-content-around">
             <div>
-                <h4 class="bg-secondary rounded py-1 px-2">Artists</h4>
-                <ul>
-                    @foreach (json_decode($comics->artists) as $artist)
-                        <li>{{ $artist }}</li>
-                    @endforeach
-                </ul>
+                <h4 class="bg-secondary rounded py-1 px-2 d-inline-block">Artists</h4>
+                <div>
+                    {{ $comics->artists }}
+                </div>
             </div>
             <div>
-                <h4 class="bg-secondary rounded py-1 px-2">Writers</h4>
-                <ul>
-                    @foreach (json_decode($comics->writers) as $writer)
-                        <li>{{ $writer }}</li>
-                    @endforeach
-                </ul>
+                <h4 class="bg-secondary rounded py-1 px-2 d-inline-block">Writers</h4>
+                <div class="pb-4">
+                    {{ $comics->writers }}
+
+                </div>
             </div>
         </div>
     </div>
