@@ -30,17 +30,7 @@ class MainController extends Controller
     {
 
         // Dati presi da form
-        $data = $request->validate([
-            'title' => 'required|unique:comics|min:5|max:255',
-            'description' => 'required|max:1000',
-            'thumb' => "required",
-            'price' => "required",
-            'series' => "required",
-            'sale_date' => "required|date",
-            'type' => "required",
-            'artists' => "required",
-            'writers' => "required"
-        ]);
+        $data = $request->validate($this->validationRules(), $this->validationErrors());
 
         // Stessa modalità utilizzata nel seeder, solo che i dati provengono dal form
         $comic = Comic::create($data);
@@ -72,7 +62,7 @@ class MainController extends Controller
     public function update(Request $request, $id)
     {
 
-        $data = $request->all();
+        $data = $request->validate($this->validationRules(), $this->validationErrors());
 
         $comic = Comic::findOrFail($id);
 
@@ -90,5 +80,29 @@ class MainController extends Controller
         $comic->delete();
 
         return redirect()->route('home');
+    }
+
+    private function validationRules()
+    {
+        return [
+            'title' => 'required|unique:comics|min:5|max:255',
+            'description' => 'required|max:1000',
+            'thumb' => "required",
+            'price' => "required",
+            'series' => "required",
+            'sale_date' => "required|date",
+            'type' => "required"
+        ];
+    }
+    private function validationErrors()
+    {
+        return [
+            'required' => 'Dato mancante.',
+            'title.min' => 'Inserisci almeno 5 caratteri.',
+            'title.max' => 'Ammessi massimo 255 caratteri.',
+            'title.unique' => 'Non puoi inserire lo stesso titolo.',
+            'description.max' => 'Ammessi massimo 1000 caratteri.',
+            'sale_date.date' => 'Inserire un formato data corretto.'
+        ];
     }
 }
