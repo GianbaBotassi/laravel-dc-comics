@@ -30,21 +30,20 @@ class MainController extends Controller
     {
 
         // Dati presi da form
-        $data = $request->all();
+        $data = $request->validate([
+            'title' => 'required|unique:comics|min:5|max:255',
+            'description' => 'required|max:1000',
+            'thumb' => "required",
+            'price' => "required",
+            'series' => "required",
+            'sale_date' => "required|date",
+            'type' => "required",
+            'artists' => "required",
+            'writers' => "required"
+        ]);
 
         // Stessa modalità utilizzata nel seeder, solo che i dati provengono dal form
         $comic = Comic::create($data);
-        // [
-        //     "title" => $data["title"],
-        //     "description" => $data["description"],
-        //     "thumb" => $data["thumb"],
-        //     "price" => $data["price"],
-        //     "series" => $data["series"],
-        //     "sale_date" => $data["sale_date"],
-        //     "type" => $data["type"],
-        //     "artists" => $data["artists"],
-        //     "writers" => $data["writers"]
-        // ]);
 
         // Decido dove voglio far tornare l'utente dopo aver inviato il form (in questo caso alla nuova card)
         return redirect()->route('show', $comic->id);
