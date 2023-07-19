@@ -30,7 +30,7 @@ class MainController extends Controller
     {
 
         // Dati presi da form
-        $data = $request->validate($this->validationRules(), $this->validationErrors());
+        $data = $request->validate($this->validationRulesAdd(), $this->validationErrorsAdd());
 
         // Stessa modalità utilizzata nel seeder, solo che i dati provengono dal form
         $comic = Comic::create($data);
@@ -62,7 +62,7 @@ class MainController extends Controller
     public function update(Request $request, $id)
     {
 
-        $data = $request->validate($this->validationRules(), $this->validationErrors());
+        $data = $request->validate($this->validationRulesEdit(), $this->validationErrorsEdit());
 
         $comic = Comic::findOrFail($id);
 
@@ -82,7 +82,7 @@ class MainController extends Controller
         return redirect()->route('home');
     }
 
-    private function validationRules()
+    private function validationRulesAdd()
     {
         return [
             'title' => 'required|unique:comics|min:5|max:255',
@@ -94,13 +94,35 @@ class MainController extends Controller
             'type' => "required"
         ];
     }
-    private function validationErrors()
+    private function validationRulesEdit()
+    {
+        return [
+            'title' => 'required|min:5|max:255',
+            'description' => 'required|max:1000',
+            'thumb' => "required",
+            'price' => "required",
+            'series' => "required",
+            'sale_date' => "required|date",
+            'type' => "required"
+        ];
+    }
+    private function validationErrorsAdd()
     {
         return [
             'required' => 'Dato mancante.',
             'title.min' => 'Inserisci almeno 5 caratteri.',
             'title.max' => 'Ammessi massimo 255 caratteri.',
             'title.unique' => 'Non puoi inserire lo stesso titolo.',
+            'description.max' => 'Ammessi massimo 1000 caratteri.',
+            'sale_date.date' => 'Inserire un formato data corretto.'
+        ];
+    }
+    private function validationErrorsEdit()
+    {
+        return [
+            'required' => 'Dato mancante.',
+            'title.min' => 'Inserisci almeno 5 caratteri.',
+            'title.max' => 'Ammessi massimo 255 caratteri.',
             'description.max' => 'Ammessi massimo 1000 caratteri.',
             'sale_date.date' => 'Inserire un formato data corretto.'
         ];
