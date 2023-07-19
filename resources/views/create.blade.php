@@ -42,8 +42,7 @@
             </div>
             <div class="input-cont mt-1 @error('description') is-invalid @enderror">
                 <label for="description">Descrizione</label>
-                <textarea type="text" name="description" id="description">
-                </textarea>
+                <input style="height: 50px" type="text" name="description" id="description">
                 @error('description')
                     <span class="alert alert-danger my-1 errors py-1">{{ $message }}</span>
                 @enderror

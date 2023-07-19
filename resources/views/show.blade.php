@@ -1,7 +1,7 @@
 @extends('layout.main-layout')
 
 @section('content')
-    <div class="container text-center">
+    <div class="container text-center text-light">
         <h2>{{ $comics->title }}</h2>
         <img src="{{ $comics->thumb }}" alt="{{ $comics->title }}" style="width: 300px">
         <div class="d-flex justify-content-between mt-4">
