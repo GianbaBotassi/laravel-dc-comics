@@ -62,7 +62,7 @@ class MainController extends Controller
     public function update(Request $request, $id)
     {
 
-        $data = $request->validate($this->validationRules(), $this->validationErrors());
+        $data = $request->all();
 
         $comic = Comic::findOrFail($id);
 
@@ -81,7 +81,6 @@ class MainController extends Controller
 
         return redirect()->route('home');
     }
-
     private function validationRules()
     {
         return [
@@ -94,13 +93,13 @@ class MainController extends Controller
             'type' => "required"
         ];
     }
-
     private function validationErrors()
     {
         return [
             'required' => 'Dato mancante.',
             'title.min' => 'Inserisci almeno 5 caratteri.',
             'title.max' => 'Ammessi massimo 255 caratteri.',
+            'title.unique' => 'Non puoi inserire lo stesso titolo.',
             'description.max' => 'Ammessi massimo 1000 caratteri.',
             'sale_date.date' => 'Inserire un formato data corretto.'
         ];
